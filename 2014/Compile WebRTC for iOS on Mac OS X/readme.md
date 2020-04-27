@@ -21,13 +21,13 @@ Mac OS X 10.9 + Command Line Tools（XCode 4.6.3）
 	a. 在指定目录下执行（我选择在 `/Developer` ）：  
   
    ``` shell
-		svn co http://src.chromium.org/svn/trunk/tools/depot_tools
+	svn co http://src.chromium.org/svn/trunk/tools/depot_tools
    ```
 	
 	b. 把depot_tools 添加到 PATH（环境变量）中：
 	
     ``` shell
-		 sudo vim /private/etc/paths
+	sudo vim /private/etc/paths
     ```
 	
     然后往打开的文件添加 `depot_tools` 的路径（我添加的是：`/Developer/depot_tools ）
@@ -35,7 +35,7 @@ Mac OS X 10.9 + Command Line Tools（XCode 4.6.3）
 #### 二、下载源代码以及生成项目文件 
 1.下载源代码
 
-```
+```shell
 mkdir webrtc_src
 cd webrtc_src
 gclient config http://webrtc.googlecode.com/svn/trunk
@@ -44,7 +44,7 @@ giclaient sync —force	//如果中途中断了，再次执行该命令
 
 2.生成 iOS 项目文件
 
-```
+```shell
 cd trunk
 export GYP_GENERATORS="xcode"	//设置环境配置
 ./build/gyp_chromium --depth=.  -DOS=ios -Dtarget_arch=arm -Dinclude_tests=0 -Denable_protobuf=0 all.gyp
