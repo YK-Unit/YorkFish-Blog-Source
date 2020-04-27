@@ -19,14 +19,18 @@ Mac OS X 10.9 + Command Line Tools（XCode 4.6.3）
 2. 安装depot_tools  
 
 	a. 在指定目录下执行（我选择在 `/Developer` ）：  
-	
-		`svn co http://src.chromium.org/svn/trunk/tools/depot_tools`
+  
+   ``` shell
+		svn co http://src.chromium.org/svn/trunk/tools/depot_tools
+   ```
 	
 	b. 把depot_tools 添加到 PATH（环境变量）中：
 	
-		`sudo vim /private/etc/paths`
-		
-		`然后往打开的文件添加 depot_tools 的路径（我添加的是：/Developer/depot_tools ）`
+    ``` shell
+		 sudo vim /private/etc/paths
+    ```
+	
+    然后往打开的文件添加 `depot_tools` 的路径（我添加的是：`/Developer/depot_tools ）
 
 #### 二、下载源代码以及生成项目文件 
 1.下载源代码
