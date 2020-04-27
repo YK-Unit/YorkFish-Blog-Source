@@ -1,8 +1,8 @@
 ---
 title: 文章模板示例
 date: 2020-04-27 12:34:56
-tags: ["2020", "教程"]
 categories: ["技术"]
+tags: ["2020", "教程"]
 comments: true
 description: 文章模板详细示例和一些关键细节说明
 ---
@@ -17,8 +17,8 @@ description: 文章模板详细示例和一些关键细节说明
 ---
 title: #{post-title}            # 文章标题；必须设置
 date: YYYY-MM-DD HH:mm:ss       # 文章创建时间；可不设置
-tags: ["#{tag}"]                # 文章标签数组；可不设置
 categories: ["#{category}"]     # 文章分类数组；可不设置；若设置，一般设置一个
+tags: ["#{tag}"]                # 文章标签数组；可不设置
 comments: true/false            # 该文章页面是否加载评论；可不设置
 description:                    # 文章摘要；可不设置
 ---
@@ -35,8 +35,8 @@ description:                    # 文章摘要；可不设置
 > ---
 > title: #{post-title}
 > date: YYYY-MM-DD HH:mm:ss
-> tags: ["#{tag}"]
 > categories: ["#{category}"]
+> tags: ["#{tag}"]
 > comments: true
 > ---
 > ```
