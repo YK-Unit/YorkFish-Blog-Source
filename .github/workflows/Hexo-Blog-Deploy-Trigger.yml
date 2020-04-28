@@ -21,5 +21,6 @@ jobs:
     - name: Trigger the Hexo-Blog-Deploy action
       uses: peter-evans/repository-dispatch@v1
       with:
-        token: ${{ secrets.Hexo_Blog_deploy_key }}
+        token: ${{ secrets.PAT_For_Workflow }}
+        repository: YK-Unit/Hexo-Blog
         event-type: deploy-blog-event
