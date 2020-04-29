@@ -1,6 +1,6 @@
 # This is a trigger workflow to trigger the Hexo-Blog-Deploy action in [Hexo-Blog repo](https://github.com/YK-Unit/Hexo-Blog)
 
-name: Hexo-Blog-Deploy-Trigger
+name: Fish-Blog-Deploy-Trigger
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -19,9 +19,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
     # from: https://github.com/marketplace/actions/hexo-action
-    - name: Trigger the Hexo-Blog-Deploy action
+    - name: Trigger the Fish-Blog-Deploy action
       uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{ secrets.PAT_For_Workflow }}
-        repository: YK-Unit/Hexo-Blog
+        repository: YK-Unit/Fish-Blog
         event-type: deploy-blog-event
