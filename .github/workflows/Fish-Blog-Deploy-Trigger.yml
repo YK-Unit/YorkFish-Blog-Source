@@ -1,4 +1,4 @@
-# This is a trigger workflow to trigger the Hexo-Blog-Deploy action in [Hexo-Blog repo](https://github.com/YK-Unit/Hexo-Blog)
+# This is a trigger workflow to trigger the Fish-Blog-Deploy action in [Fish-Blog repo](https://github.com/YK-Unit/Fish-Blog)
 
 name: Fish-Blog-Deploy-Trigger
 
@@ -18,7 +18,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
-    # from: https://github.com/marketplace/actions/hexo-action
+    # from: https://github.com/marketplace/actions/repository-dispatch
     - name: Trigger the Fish-Blog-Deploy action
       uses: peter-evans/repository-dispatch@v1
       with:
