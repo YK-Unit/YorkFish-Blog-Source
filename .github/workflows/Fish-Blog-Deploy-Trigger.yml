@@ -7,7 +7,7 @@ name: Fish-Blog-Deploy-Trigger
 on:
   push:
     branches: [ master ]
-    paths-ignore: ["README.md", "LICENSE.md", ".gitignore", ".github/**", "template/**"]
+    paths-ignore: ["README.md", "LICENSE.md", ".gitignore", "template/**"]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -22,6 +22,6 @@ jobs:
     - name: Trigger the Fish-Blog-Deploy action
       uses: peter-evans/repository-dispatch@v1
       with:
-        token: ${{ secrets.PAT_For_Workflow }}
+        token: ${{ secrets.Blog_Workflow_PAT }}
         repository: YK-Unit/Fish-Blog
         event-type: deploy-blog-event
