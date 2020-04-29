@@ -100,9 +100,9 @@ comments: true
 
 所以，**class method 其实就是 MetaClass 的 instance method。**这就是它的本质，也是可以继承和覆盖的原因。
 
-
-##参考资料：
+## 参考资料：
 
 1. http://programmers.stackexchange.com/questions/191856/what-is-a-static-method-compared-to-instance-class-private-public-methods
 2. http://stackoverflow.com/questions/15965865/static-method-which-isnt-class-2.method-in-objective-c
 3. http://stackoverflow.com/questions/8089186/whats-the-difference-between-class-method-and-static-method  
+
