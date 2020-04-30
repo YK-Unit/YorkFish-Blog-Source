@@ -16,6 +16,8 @@ comments: true
 
 这可以通过`UICollectionView` 的 `DecorationView` 特性来达到以上效果。本文主要是总结 `DecorationView` 的实现、重用机制和存在的坑。
 
+<!-- more -->
+
 ## DecorationView 的实现（包括坑）
 
 ### 实现原理

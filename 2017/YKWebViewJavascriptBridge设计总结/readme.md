@@ -15,6 +15,8 @@ comments: true
 
 [YKWebViewJavascriptBridge](https://github.com/YK-Unit/YKWebViewJavascriptBridge) 是我针对上述问题实现的库。下面将会具体介绍该库的设计思路和具体实现。
 
+<!-- more -->
+
 # YKWebViewJavascriptBridge
 
 `YKWebViewJavascriptBridge` 是基于 `WKWebView`+`messageHandler`+`自定义文本协议` 进行实现的，协议的传输采取的是请求响应模式。

@@ -8,6 +8,8 @@ comments: true
 
 由于项目的正式网络环境的 host 是走域名，能支持 https ，测试网络环境的 host 是走 IP ，无法支持 https ，导致在做 ATS 支持的时候，遇到一个问题：在 debug 过程需要切换网络环境的时候，也需要手动去开启或者关闭 ATS 。为了节省这些时间，写了一个脚本去解决这个问题，让 ATS 根据网络环境的值自动去开启或者关闭。下面将会列出具体步骤。
 
+<!-- more -->
+
 1.在 [`Your Target`-Build Settings -Preprocessor Macros] 添加你的环境宏变量 `NETWORK_FOR_PRODUCTION` ，如下图：
 
 ![Preprocessor_Macros_Image.png](readme/Preprocessor_Macros_Image.png)

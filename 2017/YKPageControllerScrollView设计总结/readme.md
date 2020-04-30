@@ -9,6 +9,8 @@ comments: true
 # 概述
 [YKPageControllerScrollView](https://github.com/YK-Unit/YKPageControllerScrollView) 是一个 `UIViewController` 容器类的滚动视图，支持 `UIViewController` 重用机制。`YKPageControllerScrollView ` 类的设计参考了 `UICollectionView` 类，所以你会发现，其接口以及代理方法和 `UICollectionView` 的是很相似的，使用上也是相似的。
 
+<!-- more -->
+
 # 如何与『容器内容』交互？
 容器有一个特性在我看来是很重要的，那就是『容器』和『容器内容』之间的交互：『容器』告知『容器内容』其状态的变更。
 对于`YKPageControllerScrollView `而言，这交互就是：告知『VC实例』的显示状态（将出现 or 已出现 or 已消失在视图中）以及生命状态（被容器回收了）的变更。

@@ -17,7 +17,10 @@ comments: true
 
 ![分支合并实验说明图.png](readme/分支合并实验说明图.png)
 
+<!-- more -->
+
 ## 实验说明
+
 在日常开发中，合并的两个分支（下面将会以日常用到的master分支和develop分支这2个分支进行举例），存在这2个情形：
 
 - master分支和develop分支无分叉：只有develop分支有更新

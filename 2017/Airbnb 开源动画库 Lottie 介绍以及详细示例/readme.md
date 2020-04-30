@@ -10,6 +10,8 @@ comments: true
 
 该文章主要介绍了 Lottie是什么，如何为 Lottie 制作动画，以及 Lottie的应用场景。适合设计师和开发者阅读以及结对实践。
 
+<!-- more -->
+
 
 ## Lottie 介绍
 

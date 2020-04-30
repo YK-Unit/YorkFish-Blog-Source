@@ -8,6 +8,8 @@ comments: true
 
 腾讯提供的iOS SDK ——[TencentOpenApi](http://wiki.open.qq.com/wiki/mobile/SDK%E4%B8%8B%E8%BD%BD) 是静态库，然后因为业务需求，需要把它转换为动态库（取名：DynamicTencentOpenApi）。在实际开发时，发现了一个奇怪的事情：
 
+<!-- more -->
+
 整个工程如下：
 （有兴趣的读者，可直接下载[该工程](https://github.com/YK-Unit/DynamicTencentOpenApi)，进行实验）
 

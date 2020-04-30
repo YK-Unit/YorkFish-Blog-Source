@@ -12,6 +12,8 @@ comments: true
 
 PS：由于MarkDown不支持数学公式，所以下面问题的证明过程是通过 [Daum Equation Editor](https://chrome.google.com/webstore/detail/daum-equation-editor/dinfmiceliiomokeofbocegmacmagjhe?hl=zh-CN) 来撰写，然后导出图片来展示。
 
+<!-- more -->
+
 
 ## 庄家输掉所有筹码的概率
 > 庄家有n个筹码，每次有概率p赢得一个筹码，或者概率q（q=1-p）输掉一个筹码。庄家输掉所有钱后，即终止游戏。假设各次赌博都是独立的，求庄家把所有筹码输光的概率。
