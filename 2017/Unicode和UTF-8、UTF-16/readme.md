@@ -19,7 +19,7 @@ Unicode 的基本元素是*码位（code point）*，共包含1114112个码位�
 
 Unicode 的所有码位组成了一个编码空间。在Unicode编码空间，Unicode码位分为17组编排，每组称为**平面**（Plane），而每平面拥有65536个码位。如下图所示：
 
-![Unicode 编码空间.png](readme/Unicode 编码空间.png)
+![Unicode 编码空间.png](readme/Unicode编码空间.png)
 
 Unicode 遵守既定规则把世界上的字符一一映射到码位中。被使用的码位，其码点值就是对应字符的Unicode编码。如， [U+0041](http://unicode.org/cldr/utility/character.jsp?a=A) 表示拉丁字母 “A”；[U+40000](http://unicode.org/cldr/utility/character.jsp?a=40000&B1=Show) 由于没使用，不表示任何字符。
 

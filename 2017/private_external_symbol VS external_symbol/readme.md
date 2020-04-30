@@ -14,7 +14,7 @@ comments: true
 （有兴趣的读者，可直接下载[该工程](https://github.com/YK-Unit/DynamicTencentOpenApi)，进行实验）
 
 
-![DynamicTencentOpenApi Project.png](readme/DynamicTencentOpenApi Project.png)
+![DynamicTencentOpenApi Project.png](readme/DynamicTencentOpenApi-Project.png)
 
 Demo 的测试 DynamicTencentOpenApi.Framework  的主要代码如下：
 
@@ -39,10 +39,10 @@ NSLog(@"%@",qqInstallUrl);
 用 [MachOView](https://github.com/gdbinit/MachOView) 查看 DynamicTencentOpenApi.Framework 里的 binary 文件发现：
 
 
-![TencentOAuth Symbol.png](readme/TencentOAuth Symbol.png)
+![TencentOAuth Symbol.png](readme/TencentOAuth-Symbol.png)
 
 
-![QQApiInterface Symbol.png](readme/QQApiInterface Symbol.png)
+![QQApiInterface Symbol.png](readme/QQApiInterface-Symbol.png)
 
 - `_OBJC_CLASS_$_QQApiInterface` symbol 的类型是：`N_PEXT`
 - `_OBJC_CLASS_$_TencentOAuth` symbol 的类型是：`N_EXT`
