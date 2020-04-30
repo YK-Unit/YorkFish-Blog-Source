@@ -17,7 +17,7 @@ comments: true
 
 Lottie 是 Airbnb 开源的一个动画渲染库，同时支持 Android、iOS、React Native 平台。Lottie 目前只支持渲染播放 After Effects 动画。 [Lottie](http://airbnb.design/lottie/) 使用从 [bodymovin](https://github.com/bodymovin/bodymovin) (开源的 After Effects 插件)导出的json数据来作为动画数据。所以从动画制作到动画使用的整个工作流程如下：
 
-![此图引用自http://cdn.trojx.me/blog_pic/lottie_sum.png](http://upload-images.jianshu.io/upload_images/1655773-f0d4b7bd03ad3dcf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![此图引用自http://cdn.trojx.me/blog_pic/lottie_sum.png](readme/Lottie工作流程图.png)
 
 1. 设计师使用 After Effects 制作动画，并导出json文件给开发者
 2. 各端的开发者通过 Lottie 渲染播放动画
@@ -54,32 +54,32 @@ After Effects 可以从Adobe官网下载安装试用，其目前售价为：3499
    - 下载 After Effects 插件安装器 [ZXP Installer](http://aescripts.com/learn/zxp-installer/)（有 Windows 和 Mac 版本）
    - 运行 `ZXP Installer`，按照指示拖动`bodymovin.zxp` 到其窗口，即可安装完成
           
-       ![拖动安装bodymovin.zxp.png](http://upload-images.jianshu.io/upload_images/1655773-dfef77e49b677d90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+       ![拖动安装bodymovin.zxp.png](readme/拖动安装bodymovin.zxp.png)
         
      安装成功后，如图所示：
 
-  ![bodymovin.zxp安装成功.png](http://upload-images.jianshu.io/upload_images/1655773-e2560d76514b1c8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+  ![bodymovin.zxp安装成功.png](readme/bodymovin.zxp安装成功.png)
 
 **3. 重启 After Effects，然后修改 AE 的设置，在 'After Effects CC -> Preferences ->  General' 中打开
  'Allow Scripts to Write Files and Access Network'**
     
    ![打开
- 'Allow Scripts to Write Files and Access Network'.png](http://upload-images.jianshu.io/upload_images/1655773-9d5b0b3fc25eeb37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ 'Allow Scripts to Write Files and Access Network'.png](readme/打开 'Allow-Scripts-to-Write-Files-and-Access-Network'.png)
 
    现在可以开始制作你的动画了，制作完毕后，需要使用 bodymovin 时，前往 'window -> extensions' 即可找到 bodymovin：
 
-   ![bodymovin.png](http://upload-images.jianshu.io/upload_images/1655773-713b81ae8fa8d7b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+   ![bodymovin.png](readme/bodymovin.png)
 
 #### 使用 After Effects 制作动画
 
-![此处请开始你的表演~](http://upload-images.jianshu.io/upload_images/1655773-d40516b8747c9a27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![此处请开始你的表演~](readme/此处请开始你的表演~.png)
 
 
 #### 使用 bodymovin 导出 json文件
 当动画制作完毕后，运行 bodymovin，选择你要导出的动画，以及保存json文件的目录，点击 'Render' 即可导出，具体流程如图所示：
 
 
-![导出 json文件流程.png](http://upload-images.jianshu.io/upload_images/1655773-43186d06673eb373.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![导出 json文件流程.png](readme/导出 json文件流程.png)
 
 #### 在线预览动画效果
 制作好 After Effects 动画，导出json文件，当然要验证一下 Lottie 能否正确渲染播放了。
@@ -105,19 +105,19 @@ Lottie 作为一个动画渲染库，在探索过程中，笔者认为其比较�
 
 各场景的示例如下：（以iOS平台为例）
 
-![启动(splash)动画.gif](http://upload-images.jianshu.io/upload_images/1655773-cbbf046e5ce137f8.gif?imageMogr2/auto-orient/strip)
+![启动(splash)动画.gif](readme/启动(splash)动画.gif)
 
 
-![上下拉刷新动画.gif](http://upload-images.jianshu.io/upload_images/1655773-f51232f3f0432910.gif?imageMogr2/auto-orient/strip)
+![上下拉刷新动画.gif](readme/上下拉刷新动画.gif)
 
 
-![加载(loading)动画+提示(tips)动画.gif](http://upload-images.jianshu.io/upload_images/1655773-048ca0f8ab4fae95.gif?imageMogr2/auto-orient/strip)
+![加载(loading)动画+提示(tips)动画.gif](readme/加载(loading)动画+提示(tips)动画.gif)
 
 
-![按钮(button)动画+礼物(gift)动画.gif](http://upload-images.jianshu.io/upload_images/1655773-988f1b7aa35e6bb0.gif?imageMogr2/auto-orient/strip)
+![按钮(button)动画+礼物(gift)动画.gif](readme/按钮(button)动画+礼物(gift)动画.gif)
 
 
-![转场动画.gif](http://upload-images.jianshu.io/upload_images/1655773-148e39c8fcf3aa74.gif?imageMogr2/auto-orient/strip)
+![转场动画.gif](readme/转场动画.gif)
 
 ## 接入 Lottie 
 
@@ -265,7 +265,7 @@ Lottie 动画的播放控制，除了常规的控制，还支持进度播放、�
 #### 添加视图到 Layer 层：可参考“添加 View 到 Layer 示例”
 Lottie 除了支持动画播放，还支持添加自定义的视图到指定的 Layer ：
 
-![添加视图到Layer层.gif](http://upload-images.jianshu.io/upload_images/1655773-92ec6921402fa14a.gif?imageMogr2/auto-orient/strip)
+![添加视图到Layer层.gif](readme/添加视图到Layer层.gif)
 
 ```objc
 NSArray *layerNames = @[@"Green Solid 1",@"Shape Layer 1",@"Shape Layer 2",@"Shape Layer 3",@"Shape Layer 4"];
@@ -287,7 +287,7 @@ for (NSString *layerName in layerNames) {
 - Shape Layer 的坐标原点由`ShapeLayer-Contents-layer-AnchorPoint`（内容图层的锚点位置）决定，X轴和Y轴的正方向则取决于其`ShapeLayer-Transform-Scale`的值的正负，具体如图所示：
 
 
-![Shape Layer坐标系统.jpg](http://upload-images.jianshu.io/upload_images/1655773-5dd76b9de9fbfcf4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Shape Layer坐标系统.jpg](readme/Shape Layer坐标系统.jpg)
 
 在上面演示的Gif图中，`Shape Layer 1`、`Shape Layer 2`、`Shape Layer 3`、`Shape Layer 4`的坐标原点都在图层中心位置，不同的是其X轴和Y轴的正方向位置。感兴趣的同学，可以下载打开 Demo 里的 [RectComp.aep](https://github.com/YK-Unit/LottieExample/tree/master/AE-Files) 文件，查看对应 Layer 的坐标系统数据，然后你也可以尝试编辑修改对应图层的坐标原点位置和XY轴方向，导出动画数据进行试验。
 
