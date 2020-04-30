@@ -2,7 +2,7 @@
 title: private_external_symbol VS external_symbol
 date: 2017-09-12 12:34:56
 categories: ["技术"]
-tags: ["2020", "OS"]
+tags: ["2017", "OS"]
 comments: true
 ---
 
