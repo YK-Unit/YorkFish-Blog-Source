@@ -10,6 +10,8 @@ comments: true
 
 文本宏（`Text Macros`）是Xcode隐藏的特性，直到Xcode 9.0后，苹果官方才开始允许开发者进行自定义文本宏。下面将会详细介绍文本宏的相关知识和应用场景。
 
+<!-- more -->
+
 ## 什么是文本宏
 
 文本宏（`Text Macro`）是一种可以就地展开（`expanded in-place`）为特定文本的符号。其常见于Xcode文件模板中，如图所示：

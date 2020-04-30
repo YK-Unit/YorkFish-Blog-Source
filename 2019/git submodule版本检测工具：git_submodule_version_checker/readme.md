@@ -23,6 +23,7 @@ comments: true
 >
 > - 子项目仓库总是需要手动更新（不过可以通过自动化工具编写帮助解决此问题）
 
+<!-- more -->
 
 ## git_submodule_version_checker
 
