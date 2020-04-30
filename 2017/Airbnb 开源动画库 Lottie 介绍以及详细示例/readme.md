@@ -55,7 +55,7 @@ After Effects 可以从Adobe官网下载安装试用，其目前售价为：3499
    - 运行 `ZXP Installer`，按照指示拖动`bodymovin.zxp` 到其窗口，即可安装完成
           
        ![拖动安装bodymovin.zxp.png](readme/拖动安装bodymovin.zxp.png)
-        
+       
      安装成功后，如图所示：
 
   ![bodymovin.zxp安装成功.png](readme/bodymovin.zxp安装成功.png)
@@ -64,7 +64,7 @@ After Effects 可以从Adobe官网下载安装试用，其目前售价为：3499
  'Allow Scripts to Write Files and Access Network'**
     
    ![打开
- 'Allow Scripts to Write Files and Access Network'.png](readme/打开 'Allow-Scripts-to-Write-Files-and-Access-Network'.png)
+ 'Allow Scripts to Write Files and Access Network'.png](readme/打开-'Allow-Scripts-to-Write-Files-and-Access-Network'.png)
 
    现在可以开始制作你的动画了，制作完毕后，需要使用 bodymovin 时，前往 'window -> extensions' 即可找到 bodymovin：
 
@@ -78,8 +78,7 @@ After Effects 可以从Adobe官网下载安装试用，其目前售价为：3499
 #### 使用 bodymovin 导出 json文件
 当动画制作完毕后，运行 bodymovin，选择你要导出的动画，以及保存json文件的目录，点击 'Render' 即可导出，具体流程如图所示：
 
-
-![导出 json文件流程.png](readme/导出 json文件流程.png)
+![导出json文件流程.png](readme/导出json文件流程.png)
 
 #### 在线预览动画效果
 制作好 After Effects 动画，导出json文件，当然要验证一下 Lottie 能否正确渲染播放了。
@@ -105,19 +104,21 @@ Lottie 作为一个动画渲染库，在探索过程中，笔者认为其比较�
 
 各场景的示例如下：（以iOS平台为例）
 
-![启动(splash)动画.gif](readme/启动(splash)动画.gif)
+- 启动(splash)动画.gif
 
+    ![启动(splash)动画.gif](readme/启动(splash)动画.gif)
 
-![上下拉刷新动画.gif](readme/上下拉刷新动画.gif)
+- 上下拉刷新动画
+    ![上下拉刷新动画.gif](readme/上下拉刷新动画.gif)
 
+- 加载(loading)动画+提示(tips)动画
+    ![加载(loading)动画+提示(tips)动画.gif](readme/加载(loading)动画+提示(tips)动画.gif)
 
-![加载(loading)动画+提示(tips)动画.gif](readme/加载(loading)动画+提示(tips)动画.gif)
+- 按钮(button)动画+礼物(gift)动画
+    ![按钮(button)动画+礼物(gift)动画.gif](readme/按钮(button)动画+礼物(gift)动画.gif)
 
-
-![按钮(button)动画+礼物(gift)动画.gif](readme/按钮(button)动画+礼物(gift)动画.gif)
-
-
-![转场动画.gif](readme/转场动画.gif)
+- 转场动画
+    ![转场动画.gif](readme/转场动画.gif)
 
 ## 接入 Lottie 
 
@@ -232,11 +233,11 @@ Lottie 动画的播放控制，除了常规的控制，还支持进度播放、�
 	- 直接打印对象的所有层级属性，从日志中获取：
         `[animationView logHierarchyKeypaths];` 
 
-         ![logHierarchyKeypaths日志.png](http://upload-images.jianshu.io/upload_images/1655773-d64edaa7ec935147.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+    ![logHierarchyKeypaths日志.png](readme/logHierarchyKeypaths日志.png)
 
 	- 通过AE文件获得：`Background 2.Shape 1.Fill 1.Color`
   
-        ![Keypath.png](http://upload-images.jianshu.io/upload_images/1655773-313a26f1555c701a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+    ![Keypath.png](readme/Keypath.png)
 
 - 视图控制器转场动画（View Controller Transitions）：可参考示例的转场动画
   Lottie 提供了 `LOTAnimationTransitionController`生成 `id <UIViewControllerAnimatedTransitioning>` 对象。
@@ -287,7 +288,7 @@ for (NSString *layerName in layerNames) {
 - Shape Layer 的坐标原点由`ShapeLayer-Contents-layer-AnchorPoint`（内容图层的锚点位置）决定，X轴和Y轴的正方向则取决于其`ShapeLayer-Transform-Scale`的值的正负，具体如图所示：
 
 
-![Shape Layer坐标系统.jpg](readme/Shape Layer坐标系统.jpg)
+![Shape Layer坐标系统.jpg](readme/Shape-Layer坐标系统.jpg)
 
 在上面演示的Gif图中，`Shape Layer 1`、`Shape Layer 2`、`Shape Layer 3`、`Shape Layer 4`的坐标原点都在图层中心位置，不同的是其X轴和Y轴的正方向位置。感兴趣的同学，可以下载打开 Demo 里的 [RectComp.aep](https://github.com/YK-Unit/LottieExample/tree/master/AE-Files) 文件，查看对应 Layer 的坐标系统数据，然后你也可以尝试编辑修改对应图层的坐标原点位置和XY轴方向，导出动画数据进行试验。
 
