@@ -220,3 +220,7 @@ typedef id _Nullable (*IMP)(id _Nonnull, SEL _Nonnull, ...);
 
 `objc_msgSend(self, @selector(class))`和`objc_msgSendSuper(objc_super, @selector(class))`传递给`class`这个方法的`IMP`的参数`id`都是同一个对象实例，所以最终二者的输出是相同的。
 
+## 参考资料
+
+- [objc-runtime源码](https://github.com/0xxd0/objc4)
+
