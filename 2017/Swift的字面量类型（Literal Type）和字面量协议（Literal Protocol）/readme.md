@@ -250,8 +250,7 @@ print("\(nilBook)\n")
 
 ```
 
-## 四、关于 'not expressible by any literal
-enum' Error
+## 四、关于 'not expressible by any literal enum' Error
 
 当你使用自定义数据类型定义枚举时，可能会遇到以下类似错误：
 
