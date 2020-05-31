@@ -1,8 +1,8 @@
 ---
 title: Objective-C的一道题：[self class] 与 [super class]
 date: 2020-05-12 10:10:01
-categories: ["iOS", "基础理论"]
-tags: ["2020"]
+categories: ["技术"]
+tags: ["2020", "iOS", "基础理论"]
 comments: true
 ---
 

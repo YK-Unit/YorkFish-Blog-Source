@@ -1,8 +1,8 @@
 ---
 title: OOP：方法（method）和函数（function）的区别
 date: 2020-05-05 10:10:01
-categories: ["基础理论"]
-tags: ["2020"]
+categories: ["技术"]
+tags: ["2020", "基础理论"]
 comments: true
 ---
 

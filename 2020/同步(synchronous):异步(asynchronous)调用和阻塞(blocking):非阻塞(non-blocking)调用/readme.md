@@ -1,8 +1,8 @@
 ---
 title: 同步(synchronous)/异步(asynchronous)调用和阻塞(blocking)/非阻塞(non-blocking)调用
 date: 2020-04-16 10:10:01
-categories: ["OS", "基础理论"]
-tags: ["2020"]
+categories: ["技术"]
+tags: ["2020", "OS", "基础理论"]
 comments: true
 ---
 

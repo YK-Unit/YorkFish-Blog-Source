@@ -1,8 +1,8 @@
 ---
 title: Why has Class-MetaClass design in Objective-C？
 date: 2020-04-25 10:10:01
-categories: ["iOS", "基础理论"]
-tags: ["2020"]
+categories: ["技术"]
+tags: ["2020", "iOS", "基础理论"]
 comments: true
 ---
 
