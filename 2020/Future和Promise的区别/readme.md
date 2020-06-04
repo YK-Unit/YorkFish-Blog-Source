@@ -12,6 +12,8 @@ Future模型和Promise模型是并发编程领域中的两种相近的异步编�
 
 Future和Promise之间，既有相同之处，也有不同之处。
 
+<!-- more -->
+
 ## Future和Promise的相同点
 
 Future和Promise的设计理念是一致的：作为一个异步任务的运行结果的占位符对象供开发者使用。
