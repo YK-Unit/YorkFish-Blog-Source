@@ -73,9 +73,9 @@ comments: true
 
    不过，这一点主要体现在`Flr`相关产品的特性说明上，而不是在日常宣传上，因为“事实胜于雄辩”——在目标用户头脑埋下这个种子后，等目标用户在事实中进行发现和获得证明即可。
    
-## Flr的开发策略
+## Flr的开发观
 
-Flr的开发策略主要有以下几点：
+Flr的开发观主要体现在其所采用的开发策略上：
 
 - 构建`Flr`核心逻辑项目——[flr-core](https://github.com/Fly-Mix/flr-core)，以保证`flr-as-plugin`、`flr-vscode-extension`、`flr-cli`在核心逻辑上保持一致，在输出产物上保持一致
 
