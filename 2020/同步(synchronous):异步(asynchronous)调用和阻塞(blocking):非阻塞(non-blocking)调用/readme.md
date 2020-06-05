@@ -34,7 +34,7 @@ https://www.zhihu.com/question/19732473/answer/241673170)
 
 在进程/线程在执行过程中，产生一个外部调用时，有时候会产生同步(synchronous)/异步(asynchronous)和阻塞(blocking)/非阻塞(non-blocking)的组合场景。
 
-#### 异步进程/线程调用
+### 异步进程/线程调用
 
 常见情况下，当这个外部调用是一个**外部进程/线程调用**时，最容易出现以下组合场景：
 
@@ -55,7 +55,7 @@ https://www.zhihu.com/question/19732473/answer/241673170)
 
     如调用方异步调用一个发送http请求的异步线程
     
-#### 挂起操作调用和`System Call`操作调用
+### 挂起操作调用和`System Call`操作调用
 
 > - 挂起操作调用：是指会导致当前进程/线程挂起的调用，如`wait()` 或 `sleep()`
 >

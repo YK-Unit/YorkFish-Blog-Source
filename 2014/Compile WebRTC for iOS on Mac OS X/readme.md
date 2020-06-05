@@ -12,7 +12,7 @@ comments: true
 Mac OS X 10.9 + Command Line Tools（XCode 4.6.3）
 
 ## 编译步骤：
-#### 一、安装依赖工具
+### 一、安装依赖工具
 
 1. 安装 git、svn（不过，一般Xcode自带安装好了）
 
@@ -32,7 +32,7 @@ Mac OS X 10.9 + Command Line Tools（XCode 4.6.3）
 	
     然后往打开的文件添加 `depot_tools` 的路径（我添加的是：`/Developer/depot_tools ）
 
-#### 二、下载源代码以及生成项目文件 
+### 二、下载源代码以及生成项目文件 
 1.下载源代码
 
 ```shell

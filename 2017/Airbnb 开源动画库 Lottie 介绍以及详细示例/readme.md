@@ -35,7 +35,8 @@ Lottie 是 Airbnb 开源的一个动画渲染库，同时支持 Android、iOS、
 
 为 Lottie 制作动画，需要： After Effects + bodymovin。After Effects制作好动画后，通过插件 bodymovin 导出一份 json文件，然后使用 Lottie 进行渲染播放。下面将会介绍如何安装该插件以及如何导出json文件。
 
-#### 安装 After Effects
+### 安装 After Effects
+
 PS： 已经安装好 After Effects 的童鞋可以忽略此环节
 
 After Effects 可以从Adobe官网下载安装试用，其目前售价为：3499￥/年，相对来说还是很贵的。对于负担不起的童鞋来说，也可以考虑破解版本。以下是Mac 的破解版本的下载链接：
@@ -45,7 +46,8 @@ After Effects 可以从Adobe官网下载安装试用，其目前售价为：3499
 
 下载的文件夹中包含安装文件`After Effects CC 2017.dmg`以及破解文件`Adobe Zii cc2017.app`压缩包。安装好 After Effects 后，解压运行Adobe Zii cc2017.app 即可免费使用 After Effects 。但是，建议负担的起的童鞋还是购买正版服务，始终可以得到各种升级服务。
 
-#### 安装 After Effects 插件 bodymovin
+### 安装 After Effects 插件 bodymovin
+
 **1. 下载插件 `bodymovin.zxp`**
    - 下载 [bodymovin压缩文件](https://codeload.github.com/bodymovin/bodymovin/zip/master)
    - 解压文件，在目录 '/build/extension' 找到 `bodymovin.zxp`
@@ -70,17 +72,18 @@ After Effects 可以从Adobe官网下载安装试用，其目前售价为：3499
 
    ![bodymovin.png](readme/bodymovin.png)
 
-#### 使用 After Effects 制作动画
+### 使用 After Effects 制作动画
 
 ![此处请开始你的表演~](readme/此处请开始你的表演~.png)
 
+### 使用 bodymovin 导出 json文件
 
-#### 使用 bodymovin 导出 json文件
 当动画制作完毕后，运行 bodymovin，选择你要导出的动画，以及保存json文件的目录，点击 'Render' 即可导出，具体流程如图所示：
 
 ![导出json文件流程.png](readme/导出json文件流程.png)
 
-#### 在线预览动画效果
+### 在线预览动画效果
+
 制作好 After Effects 动画，导出json文件，当然要验证一下 Lottie 能否正确渲染播放了。
 
 Airbnb 提供了  [iOS APP](https://www.lottiefiles.com/ios) 、[ Android APP](https://www.lottiefiles.com/android) 以及 [Lottie 动画在线预览网站](https://www.lottiefiles.com/preview) 供设计师进行动画预览。
@@ -133,12 +136,14 @@ https://github.com/YK-Unit/LottieExample
 
 ## lottie-ios 极速上手手册
 
-#### 安装 Lottie
+### 安装 Lottie
+
 可通过 Cocoapods 或者 Carthage 导入 Lottie。
 - Cocoapods：` pod 'lottie-ios' `
 - Carthage： ` github "airbnb/lottie-ios" "master" `
 
-#### 加载 Lottie 动画
+### 加载 Lottie 动画
+
 Lottie 动画支持从本地或者服务器的json文件加载。
 
 ``` objc
@@ -153,7 +158,8 @@ animationView.frame = CGRectMake(20, 20, 400, 300);
 [self.view addSubview:animationView];
 ```
 
-#### 播放 Lottie 动画
+### 播放 Lottie 动画
+
 Lottie 动画的播放控制，除了常规的控制，还支持进度播放、帧播放。
 
 - 播放、暂停、停止
@@ -263,7 +269,8 @@ Lottie 动画的播放控制，除了常规的控制，还支持进度播放、�
 		
    ```
 
-#### 添加视图到 Layer 层：可参考“添加 View 到 Layer 示例”
+### 添加视图到 Layer 层：可参考“添加 View 到 Layer 示例”
+
 Lottie 除了支持动画播放，还支持添加自定义的视图到指定的 Layer ：
 
 ![添加视图到Layer层.gif](readme/添加视图到Layer层.gif)

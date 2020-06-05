@@ -94,7 +94,7 @@ UTF-16的编码规则如下：
 
 而更形象的比喻则是：Unicode相当于中文, UTF-8、 UTF-16等相当于 行书、 楷书、草书等各种书写方式。
 
-## 参考资料：
+## 参考资料
 https://zh.wikipedia.org/wiki/Unicode
 https://zh.wikipedia.org/wiki/UTF-8
 https://zh.wikipedia.org/wiki/UTF-16

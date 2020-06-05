@@ -23,7 +23,7 @@ comments: true
 
 下面将会简述方案一和方案二的具体实现。
 
-#### 方案一：修改Frame，截图组件
+### 方案一：修改Frame，截图组件
 
 方案一的实现要点在于：修改 `webView.scrollView` 的 `frameSize`  为 `contentSize`，然后对整个 `webView.scrollView` 进行截图。
 
@@ -70,7 +70,7 @@ extension UIScrollView {
 }    
 ```
 
-#### 方案二：分页截图组件内容，合成长图
+### 方案二：分页截图组件内容，合成长图
 
 方案二的实现要点在于：分页滚动WebView组件的内容，然后生成分页截图，最后把所有分页截图合成一张长图。
 

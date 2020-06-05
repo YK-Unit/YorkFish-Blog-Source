@@ -6,12 +6,12 @@ tags: ["2017", "iOS"]
 comments: true
 ---
 
-# 概述
+## 概述
 [YKPageControllerScrollView](https://github.com/YK-Unit/YKPageControllerScrollView) 是一个 `UIViewController` 容器类的滚动视图，支持 `UIViewController` 重用机制。`YKPageControllerScrollView ` 类的设计参考了 `UICollectionView` 类，所以你会发现，其接口以及代理方法和 `UICollectionView` 的是很相似的，使用上也是相似的。
 
 <!-- more -->
 
-# 如何与『容器内容』交互？
+## 如何与『容器内容』交互？
 容器有一个特性在我看来是很重要的，那就是『容器』和『容器内容』之间的交互：『容器』告知『容器内容』其状态的变更。
 对于`YKPageControllerScrollView `而言，这交互就是：告知『VC实例』的显示状态（将出现 or 已出现 or 已消失在视图中）以及生命状态（被容器回收了）的变更。
 
@@ -36,7 +36,7 @@ comments: true
 实现了上述协议的 `UIViewController` 在状态有变更时，会得到来自容器的通知。
 
 
-# 怎么通知VC实例显示状态的变更
+## 怎么通知VC实例显示状态的变更
 `YKPageControllerScrollView ` 继承自 `UIView`，那在其内部，到底是谁真正装载了 `UIViewController` 的视图内容呢？
 
 答案是：`UICollectionView`。
@@ -90,7 +90,7 @@ comments: true
 	}
   ```
 
-# UIViewController 重用机制
+## UIViewController 重用机制
 
 `YKPageControllerScrollView` 支持的 `UIViewController` 重用机制类似于 `UICollectionView` 的 `cell` 重用机制。
 
@@ -213,7 +213,7 @@ comments: true
 
 至此，`YKPageControllerScrollView` 内形成了VC实例的生成、回收、重用的闭环。
 
-# 怎么通知VC实例生命状态的变更
+## 怎么通知VC实例生命状态的变更
 VC实例在`YKPageControllerScrollView`里的生命状态的变更主要是：VC实例被 `YKPageControllerScrollView` 回收了。
 
 所以，只需要在 `YKPageControllerScrollView` 执行回收操作的时候，通知被回收的VC实例即可。具体代码，可看`[YKPageControllerScrollView  recycleViewController]` 。

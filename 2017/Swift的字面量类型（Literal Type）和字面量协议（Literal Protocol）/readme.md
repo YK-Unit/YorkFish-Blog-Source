@@ -77,7 +77,7 @@ Swift中的字面量协议主要有以下几个：
 
 > 下面的例子均已经上传GitHub，查看下载请点击[LiteralProtocolExample](https://github.com/YK-Unit/Swift-LiteralProtocolExample)
 
-##### 1、定义`Moeny`类型，实现通过整数字面量、浮点数字面量、字符串字面量、布尔值字面量初始化`Money`实例：
+### 1、定义`Moeny`类型，实现通过整数字面量、浮点数字面量、字符串字面量、布尔值字面量初始化`Money`实例：
 
 ``` Swift
 //: Playground - noun: a place where people can play
@@ -167,7 +167,7 @@ let strMoney: Money = "10.2"
 let boolMoney: Money = true
 
 ```
-##### 2、定义`Book`类型，实现通过字典字面量、数组字面量、nil字面量初始化`Book`实例:
+### 2、定义`Book`类型，实现通过字典字面量、数组字面量、nil字面量初始化`Book`实例:
 
 ``` Swift
 //: Playground - noun: a place where people can play
