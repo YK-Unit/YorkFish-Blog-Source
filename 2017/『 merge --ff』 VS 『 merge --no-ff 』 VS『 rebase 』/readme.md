@@ -55,7 +55,7 @@ comments: true
 
 ## 实验结果
 
-#### 分支无分叉的场景下：
+### 分支无分叉的场景下：
 
 合并前：
 
@@ -76,7 +76,7 @@ comments: true
     ![rebase.png](readme/rebase.png)
 
 
-#### 分支有分叉的场景下：
+### 分支有分叉的场景下：
 
 合并前：
 
@@ -115,7 +115,7 @@ comments: true
 |    合并命令     |git merge --no-ff   |git rebase   | git merge |
 
 
-## 参考资料：
+## 参考资料
 https://www.idaima.com/article/6773
 http://www.jianshu.com/p/73ea5aca8bf3
 http://www.jianshu.com/p/0613d8249863
