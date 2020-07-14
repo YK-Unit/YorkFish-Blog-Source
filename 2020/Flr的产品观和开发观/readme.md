@@ -42,15 +42,22 @@ comments: true
    3. 使用其他文本编辑工具（如Emacs）进行Flutter开发
    4. 使用CI工具对Flutter工程进行自动构建
 
-   > Flutter官方推荐的IDE主要有Android Studio和VSCode两种。
-   > 
-   > 详细可见[《Flutter编辑工具设定》](https://flutter.cn/docs/get-started/editor)
+      > Flutter官方推荐的IDE主要有Android Studio和VSCode两种。
+      > 
+      > 详细可见[《Flutter编辑工具设定》](https://flutter.cn/docs/get-started/editor)
+
+   
 
    对应上述产品矩阵：
+
    1. `flr-as-plugin`用于满足开发场景一
+
    2. `flr-vscode-extension`用于满足开发场景二
+
    3. `flr-cli`主要用于满足开发场景三和开发场景四
-   
+
+      
+
    通过实施这个策略，`Flr`将能获得以下好处：
    - 支持全面，有助全面占领市场（此处的市场特指Flutter资源管理开发工具这个垂直领域市场）
    - 形成宣传亮点，有助宣传推广产品
