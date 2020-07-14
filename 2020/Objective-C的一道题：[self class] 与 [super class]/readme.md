@@ -177,7 +177,7 @@ Objective-C 是一门基于消息转发机制的动态编程语言，所有的�
 >
 > 需要注意的是，Objective-C根据方法的调用者和方法的返回结果，提供了不同的消息发送函数，具体如下：
 >
-> - 调用者是对象的父类（an object’s superclass, using the super keyword），返回结果类型为结构体数据类型（ data structures return types）的消息使用`objc_msgSendSuper`发送
+> - 调用者是对象的父类（an object’s superclass, using the super keyword），返回结果类型为结构体数据类型（ data structures return types）的消息使用`objc_msgSendSuper_stret`发送
 > - 调用者是对象的父类（an object’s superclass, using the super keyword）的消息使用`objc_msgSendSuper`发送
 > - 调用者是对象的（an object），返回结果类型为结构体数据类型（ data structures return types）的消息使用`objc_msgSend_stret`发送
 > - 调用者是对象的（an object），返回结果类型为浮点数类型（ some float return types）的消息使用`objc_msgSend_fpret`发送
