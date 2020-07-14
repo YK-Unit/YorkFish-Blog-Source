@@ -35,35 +35,39 @@ comments: true
 `Flr`的产品矩阵策略主要是2点：
 
 - 构建开发场景支持全面的产品矩阵
-
-   Flutter的开发场景主要有：
-   1. 使用Android Studio进行Flutter开发
-   2. 使用VSCode进行Flutter开发
-   3. 使用其他文本编辑工具（如Emacs）进行Flutter开发
-   4. 使用CI工具对Flutter工程进行自动构建
-
-      > Flutter官方推荐的IDE主要有Android Studio和VSCode两种。
-      > 
-      > 详细可见[《Flutter编辑工具设定》](https://flutter.cn/docs/get-started/editor)
-
-   
-
-   对应上述产品矩阵：
-
-   1. `flr-as-plugin`用于满足开发场景一
-
-   2. `flr-vscode-extension`用于满足开发场景二
-
-   3. `flr-cli`主要用于满足开发场景三和开发场景四
-
-      
-
-   通过实施这个策略，`Flr`将能获得以下好处：
-   - 支持全面，有助全面占领市场（此处的市场特指Flutter资源管理开发工具这个垂直领域市场）
-   - 形成宣传亮点，有助宣传推广产品
-   - 形成护城河，直接提升后来挑战者的竞争门槛
-
 - 构建具备容灾能力的产品的矩阵
+
+#### 构建开发场景支持全面的产品矩阵
+
+Flutter的开发场景主要有：
+ 1. 使用Android Studio进行Flutter开发
+
+ 2. 使用VSCode进行Flutter开发
+
+ 3. 使用其他文本编辑工具（如Emacs）进行Flutter开发
+
+ 4. 使用CI工具对Flutter工程进行自动构建
+
+
+ > Flutter官方推荐的IDE主要有Android Studio和VSCode两种。
+ > 
+ > 详细可见[《Flutter编辑工具设定》](https://flutter.cn/docs/get-started/editor)
+
+ 对应上述产品矩阵：
+
+ 1. `flr-as-plugin`用于满足开发场景一
+
+ 2. `flr-vscode-extension`用于满足开发场景二
+
+ 3. `flr-cli`主要用于满足开发场景三和开发场景四 
+
+通过实施这个策略，`Flr`将能获得以下好处：
+
+ - 支持全面，有助全面占领市场（此处的市场特指Flutter资源管理开发工具这个垂直领域市场）
+ - 形成宣传亮点，有助宣传推广产品
+ - 形成护城河，直接提升后来挑战者的竞争门槛
+
+#### 构建具备容灾能力的产品的矩阵
 
    此处所述的“灾难”，主要是指Android Studio或者VSCode进行了breaking式的版本升级后，插件因为兼容性问题导致运行失败或者运行异常。
    当发生此种“灾难”后，上述产品矩阵中的`flr-cli`可以作为`flr-as-plugin`和`flr-vscode-extension`的“备胎”，帮助开发者正常完成开发任务，顺利过渡到插件新版本的发布。
@@ -81,6 +85,9 @@ comments: true
    不过，这一点主要体现在`Flr`相关产品的特性说明上，而不是在日常宣传上，因为“事实胜于雄辩”——在目标用户头脑埋下这个种子后，等目标用户在事实中进行发现和获得证明即可。
    
 - 对外输出Flr的标准，比如推荐的资源组织结构
+
+
+
 ## Flr的开发观
 
 Flr的开发观主要体现在其所采用的开发策略上：
