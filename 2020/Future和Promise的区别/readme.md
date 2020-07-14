@@ -44,17 +44,11 @@ Future和Promise的区别是：
       > - completing with a value
       > - completing with an error
     
-    
-    
     Promise的状态有3种：
     
     - pending：待定状态，Promise的初始化状态
-    
     - fulfilled：满足状态，意味着操作成功
-    
     - rejected：拒绝状态，意味着操作失败
-    
-       
     
 - 状态修改机制不一样
 
@@ -64,8 +58,6 @@ Future和Promise的区别是：
     > - `fulfill`函数的作用是：修改Promise的状态为fulfilled，同时返回结果值
     > - `reject`函数的作用是：修改Promise的状态为rejected，同时返回错误信息
     > 在支持Promise的不同编程语言中，`fulfill`、`reject`函数可能有其他名称，比如在JavaScript中，二者对应叫`resolve`和`reject`
-
-    
 
 - 结果返回机制不一样
 
