@@ -60,6 +60,7 @@ description:                    # 文章摘要；可不设置
 - `IoT`：IoT技术相关的文章
 - `教程`：技术教程类的文章
 - `人文`：人文相关的文章
+- `Review`：闭关修炼期间的、Review知识体系的文章
 
 ## category for post
 当前供文章发布使用的`category`有：

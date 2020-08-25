@@ -2,7 +2,7 @@
 title: Flutter：网易智造APP的JSON和模型类相互转换方案
 date: 2019-12-26 12:34:56
 categories: ["技术"]
-tags: ["2020", 大前端", "Flutter"]
+tags: ["2019", 大前端", "Flutter"]
 comments: true
 ---
 
