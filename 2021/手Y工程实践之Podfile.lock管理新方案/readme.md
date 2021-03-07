@@ -43,6 +43,8 @@ comments: true
 
 为此，我制定了一个新的`Podfile.lock`管理方案，下面将会做具体的介绍。
 
+<!-- more -->
+
 ## 手Y工程的Podfile.lock管理新方案
 
 `Podfile.lock`管理新方案借助`Ruby`强大的`Method Swizzling`能力实现，整体技术方案如下：
