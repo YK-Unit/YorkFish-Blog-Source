@@ -47,13 +47,15 @@ comments: true
 
 ## 手Y工程的Podfile.lock管理新方案
 
-`Podfile.lock`管理新方案借助`Ruby`强大的`Method Swizzling`能力实现，整体技术方案如下：
+`Podfile.lock`管理新方案是：使用 Podfile.lock 文件副本 Podfile.lock.dump（相比原件，不记录 CocoaPods 版本信息）代替 Podfile.lock 文件纳入版本管理以保证团队各成员本地安装的依赖是一致的，并修改 CocoaPods 中和 Podfile.lock 文件相关的逻辑，包括 Podfile.lock 文件的读写逻辑和 Manifest.lock 的检测逻辑（Manifest.lock 检测脚本《Xcode Run Script Phase - [CP] Check Pods Manifest.lock》）。相关逻辑的修改借助`Ruby`强大的`Method Swizzling`能力实现，整体技术方案如下：
 
-1. hook `CocoaPods`的创建`Podfile.lock`的方法`write_lockfiles`，将其逻辑变更为：创建`Podfile.lock`后，再基于`Podfile.lock`创建一个移除了`CocoaPods`版本信息的副本`Podfile.lock.dump`；然后人为把`Podfile.lock.dump`纳入版本管理
+1. hook `CocoaPods` 的读取`Podfile.lock`信息的方法`lockfile`（`Pod::Config.lockfile`），变更逻辑为：从 `Podfile.lock.dump`读取依赖库信息，从`Podfile.lock`读取`CocoaPods`版本信息，以及把`Podfile.lock.dump`记录的依赖库信同步到`Podfile.lock`；
 
-	> 此举是为了满足需求1和需求2。对于此举的疑问可看下文的《Q&A》。
+2. hook `CocoaPods`的创建`Podfile.lock`的方法`write_lockfiles`（`Pod::Installer.write_lockfiles`），将其逻辑变更为：创建`Podfile.lock`后，再基于`Podfile.lock`创建一个移除了`CocoaPods`版本信息的副本`Podfile.lock.dump`；然后人为把`Podfile.lock.dump`纳入版本管理
 
-2. hook `CocoaPods`的创建`Manifest.lock`检测脚本的方法`add_check_manifest_lock_script_phase`，将其逻辑变更为：基于本地的`Manifest.lock`创建副本`Manifest.lock.dump`，并比较`Manifest.lock.dump`是否和`Podfile.lock.dump`一致；若不一致，就使用`Podfile.lock.dump`更新本地的 `Podfile.lock`，并抛出错误信息和中断编译
+	> 上述2个操作是为了满足需求1和需求2。对于此举的疑问可看下文的《Q&A》。
+
+3. hook `CocoaPods`的创建`Manifest.lock`检测脚本的方法`add_check_manifest_lock_script_phase`（`Pod::Installer::UserProjectIntegrator::TargetIntegrator.add_check_manifest_lock_script_phase`），将其逻辑变更为：基于本地的`Manifest.lock`创建副本`Manifest.lock.dump`，并比较`Manifest.lock.dump`是否和`Podfile.lock.dump`一致；若不一致，就使用`Podfile.lock.dump`更新本地的 `Podfile.lock`，并抛出错误信息和中断编译
 
 	> 此举是为了满足需求3。
 
@@ -66,6 +68,70 @@ comments: true
 1. 在工程根目录创建hook `CocoaPods`的代码`PodilePatch_HookPod.rb`：
 
 ```ruby
+class Pod::Lockfile
+
+  # Update internal cocoapods version.
+  #
+  def update_internal_cocoapods_version(version)
+    internal_data['COCOAPODS'] = version
+  end
+
+end 
+
+class Pod::Config
+
+  # @return [Lockfile] The Local Lockfile to use for the current execution.
+  # @return [Nil] If no Lockfile is available.
+  #
+  def local_lockfile
+    @local_lockfile ||= Pod::Lockfile.from_file(lockfile_path) if lockfile_path
+  end
+
+  # Returns the path of the Lockfile.
+  #
+  # @note The Lockfile is named `Podfile.lock.dump`.
+  #
+  def team_lockfile_path
+    @team_lockfile_path ||= installation_root + 'Podfile.lock.dump'
+  end
+
+  # @return [Lockfile] The Team Lockfile to use for the current execution.
+  # @return [Nil] If no Lockfile is available.
+  #
+  def team_lockfile
+    @team_lockfile ||= Pod::Lockfile.from_file(team_lockfile_path) if team_lockfile_path
+  end
+
+  # @return [bool] If yes The Local Lockfile is did be updated with The Team Lockfile
+  #
+  attr_accessor :did_update_local_lockfile
+  did_update_local_lockfile = false
+
+  # 用户拉取代码后，立即执行 pod install，若本地的 Podfile.lock 非最新，这时候会导致安装的依赖是旧的，并且导致 Podfile.lock.dump 也变成旧的
+  # 为了解决此问题，针对此种场景，hook Pod::Config.lockfile 方法，在用户执行 pod install/update 时，从 Podfile.lock.dump 读取依赖库信息，从 Podfile.lock 读取 CocoaPods 版本信息，以及把 Podfile.lock.dump 记录的依赖库信同步到 Podfile.lock
+  # modify lockfile method
+  define_method(:lockfile) do
+    # 使用 Podfile.lock.dump（依赖库信息） 和 Podfile.lock （CocoaPods版本信息）生成 Lockfile
+    # 以及同步 Podfile.lock.dump（依赖库信息）到 Podfile.lock
+    if team_lockfile and local_lockfile and (did_update_local_lockfile == false)
+      puts "read Lockinfo from #{team_lockfile_path} and #{lockfile_path}"
+      # puts "Generated Lockfile Instances: team_lockfile(#{team_lockfile}) and local_lockfile(#{local_lockfile})"
+
+      cocoapods_version_str = "#{local_lockfile.cocoapods_version}"
+      team_lockfile.update_internal_cocoapods_version(cocoapods_version_str)
+      puts "team_lockfile.cocoapods_version: #{cocoapods_version_str}"
+
+      update_cmd = "cp Podfile.lock.dump Podfile.lock && echo \"COCOAPODS: #{cocoapods_version_str}\">> Podfile.lock"
+      puts "#{update_cmd}"
+      system update_cmd
+
+      did_update_local_lockfile = true
+    end
+    @lockfile ||= team_lockfile
+  end
+
+end
+
 class Pod::Installer
   
   def dump_podfile_lock()
@@ -92,6 +158,8 @@ class Pod::Installer
           phase = UserProjectIntegrator::TargetIntegrator.create_or_update_shell_script_build_phase(native_target, BUILD_PHASE_PREFIX + phase_name)
           native_target.build_phases.unshift(phase).uniq! unless native_target.build_phases.first == phase
           phase.shell_script = <<-SH.strip_heredoc
+            export LANG=en_US.UTF-8
+            
             Podfile_lock_dump_file="${PODS_PODFILE_DIR_PATH}/Podfile.lock.dump"
             if [ ! -f ${Podfile_lock_dump_file} ]; then
                 echo "${Podfile_lock_dump_file} not found" >&2
@@ -111,8 +179,7 @@ class Pod::Installer
                 cp ${Podfile_lock_dump_file} "${PODS_PODFILE_DIR_PATH}/Podfile.lock" && echo "COCOAPODS: $(pod --version)">> "${PODS_PODFILE_DIR_PATH}/Podfile.lock"
 
                 # 抛出错误，提醒开发者
-                echo "error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation." >&2
-                echo "错误: 本地安装的Pod库依赖非最新。请执行 'pod install' 或者更新你的 CocoaPods 版本。" >&2
+                echo "error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\n(错误: 本地安装的Pod库依赖非最新。请执行 'pod install' 或者更新你的 CocoaPods 版本。)" >&2
 
                 exit 1
             fi
@@ -216,4 +283,3 @@ end
 由于需要引入`bundler`和`Gemfile`，以及使用`bundler exec pod install/update`代替`pod install/update`，这斜在我看来不符合我的需求4，故没有采取此方案。
 
 > 注意：一般来说，工具链版本比较稳定，其变更频率远远低于工程代码依赖的版本变化。其他团队在评估引入`bundler`和`Gemfile`给团队成员带来的负担时，应根据自己当前团队的情况（比如人数、技术栈等）进行评估。
-
