@@ -36,6 +36,8 @@ comments: true
 
 新`Commit Message`规范在经过实践的验收后，作为一个负责的开发团队，我们觉得可以对外分享我们的这个新的`Commit Message`规范，以及分享我们如何去保障新`Commit Message`规范的实施。
 
+<!-- more -->
+
 ## 新 Commit Message 规范
 依据手Y的工作流和既存的`Commit Message`规范，新的`Commit Message`规范按照集成时间点前后分为2个版本：
 
