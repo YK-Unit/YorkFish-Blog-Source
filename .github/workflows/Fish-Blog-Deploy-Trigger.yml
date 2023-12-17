@@ -22,6 +22,6 @@ jobs:
     - name: Trigger the Fish-Blog-Deploy action
       uses: peter-evans/repository-dispatch@v2.1.2
       with:
-        deploy_key: ${{ secrets.BLOG_DEPLOY_KEY }}
+        token: ${{ secrets.BLOG_SOURCE_PAT }}
         repository: YK-Unit/Fish-Blog
         event-type: deploy-blog-event
