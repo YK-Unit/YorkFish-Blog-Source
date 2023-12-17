@@ -2,9 +2,6 @@
 
 name: Fish-Blog-Deploy-Trigger
 
-runs:
-  using: 'node20'
-
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
@@ -23,7 +20,7 @@ jobs:
     steps:      
     # from: https://github.com/marketplace/actions/repository-dispatch
     - name: Trigger the Fish-Blog-Deploy action
-      uses: peter-evans/repository-dispatch@v1
+      uses: peter-evans/repository-dispatch@v2.1.2
       with:
         token: ${{ secrets.Blog_Workflow_PAT }}
         repository: YK-Unit/Fish-Blog
