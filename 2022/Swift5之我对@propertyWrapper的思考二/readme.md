@@ -16,7 +16,7 @@ comments: true
 
 下面让我结合上篇中《`@propertyWrapper`方案示例》，对我的探索答案一一展开阐述。
 
-```
+```swift
  // @propertyWrapper方案示例
  // ======= 实现的 propertyWrapper TwelveOrLess ========
  @propertyWrapper
@@ -56,7 +56,7 @@ comments: true
 
 万变不离其宗，实现代码复用的一种方式，就是自定义数据类型，封装相同逻辑。而`@propertyWrapper`的做法也是让开发者按照约定定义一种数据类型，来实现代码复用。下面，就让我们对照例子，先实现一个自定义的数据类型`TwelveOrLess`和对应的测试用例吧：
 
-```
+```swift
  // ======= 实现的自定义数据类型 TwelveOrLess ========
  struct TwelveOrLess {
      var wrappedValue: Int {
@@ -95,7 +95,7 @@ comments: true
 
 为了解决上述报错以及对齐《`@propertyWrapper`方案》的开发体验，只需要让`TwelveOrLess`实现`ExpressibleByIntegerLiteral`字面量协议即可：
 
-```
+```swift
  // ======= 实现的自定义数据类型 TwelveOrLess ========
  struct TwelveOrLess {
      var wrappedValue: Int {
@@ -132,7 +132,7 @@ comments: true
 
 目前看起来开发体验和《`@propertyWrapper`方案》差不多了，但是还是有短板，那就是赋值操作时，会报错：`Cannot convert value of type 'TwelveOrLess' to specified type 'Int'` 。
 
-```
+```swift
  func test_TwelveOrLess() {
      // 报错：Cannot convert value of type 'TwelveOrLess' to specified type 'Int'
      var temp_h: Int = constrainedRectangle.height
@@ -148,7 +148,7 @@ comments: true
 
 对此，这个探索方案卡在此处。但是，这里将会通过C++展示这个探索方案，帮助读者一窥全貌：
 
-```
+```c++
  #include <iostream>
  
  class TwelveOrLess {  
@@ -187,7 +187,7 @@ comments: true
 
 Swift目前是支持开发者实现自定义操作符，因此接着上述思路，我们可给`TwelveOrLess`实现一个和赋值运算符（`=`）相似自定义操作符`<<`，然后通过这个操作符完成赋值操作：
 
-```
+```swift
  // ======= 实现的自定义数据类型 TwelveOrLess ========
  struct TwelveOrLess {
      var wrappedValue: Int {
