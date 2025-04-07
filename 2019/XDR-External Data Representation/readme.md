@@ -1,5 +1,5 @@
 ---
-title: XDR: External Data Representation
+title: XDR：External Data Representation
 date: 2019-03-09 12:34:56
 categories: ["技术"]
 tags: ["2019", "OS"]
@@ -525,5 +525,4 @@ struct frame {
 	opaque fcs[4];
 }
 ```
-
 
