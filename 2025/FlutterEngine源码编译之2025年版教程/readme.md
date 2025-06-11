@@ -39,6 +39,8 @@ git clone git@github.com:flutter/flutter.git
 
 3. 在源码根目录执行`gclient sync`同步代码和安装所需的依赖
 
+<!-- more -->
+
 ## 3. 编译 Flutter Engine
 
 1. 生成构建工程：进入源码根目录，然后运行 gn 命令生成指定平台的构建工程，构建工程存放在 `engine/src/out` 目录下
